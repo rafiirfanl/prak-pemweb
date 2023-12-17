@@ -1,0 +1,52 @@
+<!-- Muhammad Rafi Irfan Lubis - 120140219 - TUGAS PRAKTIKUM PEMWEB 4 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penghitung ganjil-genap</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            height: 100vh;
+        }
+        div {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div style="height: 300px;width: 600px;border: 2px solid black; padding-left: 15px;">
+        <h1>Menghitung Bilangan Ganjil dan Genap</h1>
+        <p>Masukkan bilangan bulat positif:</p>
+        <input type="text" id="bilangan" name="bilangan">
+        <input type="submit" value="Hitung"  onclick="hitungGanjilGenap()">
+        <p>Hasil:</p>
+        <p>Jumlah Bilangan Ganjil : <span id="ganjil"></span></p>
+        <p>Jumlah Bilangan Genap : <span id="genap"></span></p>
+    </div>
+
+    <script>
+        function hitungGanjilGenap(){
+            let bilangan = parseInt(document.getElementById('bilangan').value);
+            let i = 1;
+            let ganjil = 0;
+            let genap = 0;
+            while (i <= bilangan){
+                if(i % 2 === 0){
+                    genap++;
+                }else if(i % 2 === 1){
+                    ganjil++;
+                }
+                i++;
+            }
+            document.getElementById("genap").textContent = genap;
+            document.getElementById("ganjil").textContent = ganjil;
+
+        }
+    </script>
+</body>
+</html>
